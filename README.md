@@ -1,5 +1,25 @@
 # snsnotification
 snsnotification
+
+# How to use this script
+-------------------------------------------------- 
+
+
+```
+yum install httpd mariadb mariadb-server git -y
+
+```
+
+# For downloading this script
+-------------------------------------------------- 
+
+```
+git clone https://github.com/vyjith/snsnotification
+cd snsnotification/
+chmod +x sns.sh
+bash sns.sh
+```
+
 # source code
 
 ```
