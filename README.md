@@ -25,23 +25,23 @@ bash sns.sh
 ```
 #! /bin/bash
 
-echo -n "Please let me know if you want to create a sns topic, please enter yes | no : "
+echo -n "Please let me know if you want to create an Amazon Simple SNS Notification topic, please enter yes | no : "
 read yn
 if [[ "$yn" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
-        echo -n "Please enter your sns topic here : "
+        echo -n "Please enter your Amazon Simple SNS Notification topic here : "
         read snstopic
-        echo -n "Please let me know your regieon here :"
+        echo -n "Please let me know your region here:"
         read snsregion
         aws sns create-topic --name ${snstopic} --region ${snsregion}
         echo ""
-        echo "You sns Topic has been created above. Thank you!. Please rerun the script again for setuping the down alert nofification with the above created sns arn topic"
+        echo "You Amazon Simple SNS Notification Topic has been created above. Thank you!. Please rerun the script again for setuping the down alert notification with the above-created Amazon Simple SNS Notification arn topic"
 else
-        echo -n "Please let me know your sns arn for subscribe the topic :"
+        echo -n "Please let me know your Amazon Simple SNS Notification arn for subscribe the topic:"
         read snsarn
-        echo -n "Please let me know your email id for subscribe the topic :"
+        echo -n "Please let me know your email id for subscribing the topic :"
         read snsemail
-        echo -n "Please let me know your regieon here :"
+        echo -n "Please let me know your region here:"
         read snsregion
         aws sns subscribe --topic-arn ${snsarn} --region ${snsregion} --protocol email --notification-endpoint ${snsemail}
         echo ""
@@ -97,10 +97,10 @@ chmod +x /root/mariadb.sh
 }
 
         echo ""
-        echo "Send a confirmation eamail to the email ID and you need to confirm. Subscribe by click on confirmation link then only publisher can send email to you......."
+        echo "Send a confirmation email to the email ID and you need to confirm. Subscribe by clicking on the confirmation link then only the publisher can send an email to you......."
         echo ""
         sleep 2
-        echo "Here, we are going to script for setuping a bash script for MariaDB or apache down alert. Please let me kno which option from below you would like to recieve an notification"
+        echo "Here, we are going to script for setup a bash script for MariaDB or apache down alert. Please let me know which option from below you would like to receive an notification"
         echo ""
         echo "1) Apache down alert"
         echo ""
@@ -111,17 +111,17 @@ chmod +x /root/mariadb.sh
 
         read -p "Please choose the value (1 | 2 | 3) : " answer
         case $answer in
-                1) echo "you have selected apache down alert, please hold a moment, we are setuping for you!"
+                1) echo "you have selected apache down alert, please hold a moment, while we set up the bash. Thank you for choosing my script"
                         sns_apache
                         ;;
-                2) echo "You have selected MariaDB down alert, please hold a moment, we are setuping for you!"
+                2) echo "You have selected MariaDB down alert, please hold a moment, while we set up the bash. Thank you for choosing my script"
                         sns_mariadb
                         ;;
-                3) echo "You have selected Mariadb and apache alert, please hold a moment, we are setuping for you!"
+                3) echo "You have selected MariaDB and apache alert, please hold a moment, while we set up the bash. Thank you for choosing my script"
                         sns_apache
                         sns_mariadb
                         ;;
-                *) echo "You have enterd an invalid option"
+                *) echo "You have entered an invalid option"
                         ;;
                 esac
 
