@@ -1,26 +1,45 @@
-# snsnotification
-snsnotification
-
-# How to use this script
+# Amazon Simple Sns Notification Alert Bash
 -------------------------------------------------- 
 
+[![Builds](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-```
-yum install httpd mariadb mariadb-server git -y
+## Description
 
-```
 
-# For downloading this script
+I think this script is very useful for those who are looking for getting an alert if an service is down. In this script, I have only explianed, how can we get an alert if the Apache or MariaDB service is down. Another advantage of the script is that you can simply notifed through the Amazon Simpele SNS notification Alert, if the Apache or Mariadb and so on. I'll share with you a demo of my script below. Please contact me if you encounter any problems running this script also please let me know if you have any suggestion so that I can improve my script. 
+
+
+#### **Please note that your server needs the IAM role with Amazon SNS full access permission to execute this bash**
+
+![](https://i.ibb.co/gyWNY5C/sns-alert.png)
+
+
+## Pre-Requestes (Package-installation)
 -------------------------------------------------- 
 
+```sh
+
+sudo yum -y install git 
+
 ```
-git clone https://github.com/vyjith/snsnotification
-cd snsnotification/
+
+> Please note that this script is not supporting with macOS and windows
+
+
+## How to use this script
+
+-------------------------------------------------- 
+
+```sh
+
+git clone https://github.com/vyjith/Amazon-Simple-Sns-Notification-Alert-Bash
+cd Amazon-Simple-Sns-Notification-Alert-Bash/
 chmod +x sns.sh
 bash sns.sh
+
 ```
 
-# source code
+## source code
 
 ```
 #! /bin/bash
@@ -127,3 +146,13 @@ chmod +x /root/mariadb.sh
 
 fi
 ```
+
+## Conclusion
+
+It is a simple bash script to getting an alert if an Apache or MariaDB service down. Please contact me when you encounter any difficulty error while running this script. Thank you!
+
+### ⚙️ Connect with Me
+<p align="center">
+<a href="https://www.instagram.com/iamvyjith/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/vyjith-ks-3bb8b7173/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+
